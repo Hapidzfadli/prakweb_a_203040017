@@ -15,6 +15,7 @@ $buku = query("SELECT * FROM buku");
 </head>
 
 <body>
+    <h2>DAFTAR BUKU</h2>
     <div class="d-flex flex-row" style="padding: 20px;">
         <div class="row">
             <?php foreach ($buku as $row) : ?>
