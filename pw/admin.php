@@ -21,15 +21,16 @@
         <nav id="sidebarMenu" class="collapse d-lg-block sidebar collapse bg-white">
             <div class="position-sticky">
                 <div class="list-group list-group-flush mx-3">
-                    <a href="#" class="list-group-item list-group-item-action py-2 ripple" aria-current="true">
+                    <a href="admin.php?page=dashboard" class="list-group-item list-group-item-action py-2 ripple <?php if ($_GET['page'] == "dashboard") echo "active"; ?>" aria-current="true">
                         <i class="fas fa-tachometer-alt fa-fw me-3"></i><span>Main dashboard</span>
                     </a>
                     <!-- <a href="#" class="list-group-item list-group-item-action py-2 ripple active">
                         <i class="fas fa-chart-area fa-fw me-3"></i><span>Webiste traffic</span>
                     </a> -->
-                    <a href="admin/post.php" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-users fa-fw me-3"></i><span>Post</span></a>
-                    <a href="#" class="list-group-item list-group-item-action py-2 ripple"><i class="fas fa-money-bill fa-fw me-3"></i><span>About</span></a>
+                    <a href="admin.php?page=post" class="list-group-item list-group-item-action py-2 ripple <?php if ($_GET['page'] == "post") echo "active"; ?>"><i class="fas fa-users fa-fw me-3"></i><span>Post</span></a>
+                    <a href="admin.php?page=about" class="list-group-item list-group-item-action py-2 ripple <?php if ($_GET['page'] == "about") echo "active"; ?>"><i class="fas fa-money-bill fa-fw me-3"></i><span>About</span></a>
                 </div>
+
             </div>
         </nav>
         <!-- Sidebar -->
@@ -37,8 +38,11 @@
     <!--Main Navigation-->
 
     <!--Main layout-->
-    <main style="margin-top: 58px;">
-        <div class="container pt-4"></div>
+    <main style="margin-top: 8px;">
+        <?php if ($_GET['page'] == "post") : ?>
+            <?php include './admin/post.php'; ?>
+        <?php endif; ?>
+
     </main>
     <!--Main layout-->
 
