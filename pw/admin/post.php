@@ -2,7 +2,9 @@
 require 'db.php';
 require 'function.php';
 $buku = query("SELECT * FROM buku");
+
 ?>
+
 <div style="padding: 16px;">
     <div class="row">
         <div class="col">
@@ -28,12 +30,12 @@ $buku = query("SELECT * FROM buku");
                                 <ul class="list-group list-group-horizontal">
                                     <ul class="list-inline">
                                         <li class="list-inline-item">
-                                            <a href="">
+                                            <a href="./admin.php?page=ubah&id=<?= $row['id']; ?>">
                                                 <button type="button" class="btn btn-primary btn-sm">Change</button>
                                             </a>
                                         </li>
                                         <li class="list-inline-item">
-                                            <a href="">
+                                            <a href="./admin.php?page=delete&id=<?= $row['id']; ?>">
                                                 <button type="button" class="btn btn-danger btn-sm">Delete</button>
                                             </a>
                                         </li>

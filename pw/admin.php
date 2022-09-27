@@ -1,3 +1,11 @@
+<?php
+if (!isset($_GET['page'])) {
+    echo "<script>
+    document.location.href = 'admin.php?page=dashboard';
+    </script>";
+}
+?>
+
 <!doctype html>
 <html lang="en">
 
@@ -11,6 +19,7 @@
 
     <link rel="stylesheet" href="assets/style.css">
     <title>Admin</title>
+
 </head>
 
 <body>
@@ -39,10 +48,22 @@
 
     <!--Main layout-->
     <main style="margin-top: 8px;">
-        <?php if ($_GET['page'] == "post") : ?>
-            <?php include './admin/post.php'; ?>
+        <div class="add-menu" style="padding: 0 16px;">
+            <a href="">
+                <button type="button" class="btn btn-primary btn-sm">Add New</button>
+            </a>
+        </div>
+        <?php if (isset($_GET['page'])) : ?>
+            <?php if ($_GET['page'] == "post") : ?>
+                <?php include './admin/post.php'; ?>
+            <?php endif; ?>
+            <?php if ($_GET['page'] == "ubah") : ?>
+                <?php include './admin/ubah.php'; ?>
+            <?php endif; ?>
+            <?php if ($_GET['page'] == "delete") : ?>
+                <?php include './admin/delete.php'; ?>
+            <?php endif; ?>
         <?php endif; ?>
-
     </main>
     <!--Main layout-->
 
