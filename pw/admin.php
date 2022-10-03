@@ -49,7 +49,7 @@ if (!isset($_GET['page'])) {
     <!--Main layout-->
     <main style="margin-top: 8px;">
         <div class="add-menu" style="padding: 0 16px;">
-            <a href="">
+            <a href="admin.php?page=add">
                 <button type="button" class="btn btn-primary btn-sm">Add New</button>
             </a>
         </div>
@@ -62,6 +62,9 @@ if (!isset($_GET['page'])) {
             <?php endif; ?>
             <?php if ($_GET['page'] == "delete") : ?>
                 <?php include './admin/delete.php'; ?>
+            <?php endif; ?>
+            <?php if ($_GET['page'] == "add") : ?>
+                <?php include './admin/add.php'; ?>
             <?php endif; ?>
         <?php endif; ?>
     </main>

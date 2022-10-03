@@ -1,7 +1,6 @@
 <?php
 require 'db.php';
 require 'function.php';
-$id = $_GET['id'];
 
 // cek apakah tombol sudah ditekan atau belum
 if (isset($_POST["submit"])) {
